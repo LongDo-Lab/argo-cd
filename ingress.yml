@@ -1,0 +1,23 @@
+ingress:
+  ssl:
+    passthrough: '"true"'
+    redirect: '"true"'
+  hosts:
+    - host: guestbook.com
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: guestbook-ui
+              port:
+                number: 80
+    - host: argocd.example.com
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: argocd-server
+              port:
+                name: https
