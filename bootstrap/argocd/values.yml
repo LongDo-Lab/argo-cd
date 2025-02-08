@@ -16,3 +16,10 @@ configs:
     ory:
       type: helm
       url: https://k8s.ory.sh/helm/charts
+
+  # General Argo CD configuration
+  ## Ref: https://github.com/argoproj/argo-cd/blob/master/docs/operator-manual/argocd-cm.yaml
+  cm:
+    # -- Enable Kustomizing Helm charts
+    ## Ref: https://argo-cd.readthedocs.io/en/stable/user-guide/kustomize
+    kustomize.buildOptions: --enable-helm
